@@ -1,4 +1,4 @@
-# PUlearning_DeepLearning
+# Keras implementation of PU learning
 PU Learning with Deep Learning.
 
 ## Quick Start Example
