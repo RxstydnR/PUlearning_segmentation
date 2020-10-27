@@ -3,7 +3,7 @@ PU Learning with Deep Learning.
 
 ## Quick Start Example
 
-```python
+```sh
 python main.py --P_dataset dataset/Positive --U_dataset dataset/Unlabelled
 ```
 
