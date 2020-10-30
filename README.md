@@ -2,7 +2,7 @@
 
 **This is for segmentation of Aurora images with a deep learning model trained by PU Learning.**
 
-This is also a reproducing code written in ***Keras*** for non-negative PU learning [1] and unbiased PU learning [2] in the paper "Positive-Unlabeled Learning with Non-Negative Risk Estimator". 
+`PULoss.py` is also a reproducing code written in ***Keras*** for non-negative PU learning [1] and unbiased PU learning [2] in the paper "Positive-Unlabeled Learning with Non-Negative Risk Estimator". 
 
 To get know about PU Learning, see **`pulearn.ipynb`** for a short PU Learning explanation in Japanese.
 
