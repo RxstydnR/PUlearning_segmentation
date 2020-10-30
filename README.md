@@ -1,4 +1,4 @@
-# Aurora Segmentation for Aurora Image with PU Learning.
+# Aurora Image Segmentation with PU Learning.
 
 **This is for segmentation of Aurora images with a deep learning model trained by PU Learning.**
 
