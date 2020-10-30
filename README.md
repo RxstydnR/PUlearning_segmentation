@@ -35,11 +35,11 @@ As a example, we segment the aurora images with the background as positive class
 
 The results are figures below.
 
-<center><img src="Results/2.jpg"></center>
-<center><img src="Results/5.jpg"></center>
-<center><img src="Results/6.jpg"></center>
-<center><img src="Results/8.jpg"></center>
-<center><img src="Results/9.jpg"></center>
+<center><img src="Results/2.jpg" width=50%></center>
+<center><img src="Results/5.jpg" width=50%></center>
+<center><img src="Results/6.jpg" width=50%></center>
+<center><img src="Results/8.jpg" width=50%></center>
+<center><img src="Results/9.jpg" width=50%></center>
 
 
 
