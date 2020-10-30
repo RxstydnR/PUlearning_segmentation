@@ -29,7 +29,7 @@ python train.py --P_dataset dataset/Positive --U_dataset dataset/Unlabelled
 Run `segmentation.py`.
 
 ```sh
-python segmentation.py --dataset dataset/Unlabelled --model [trained model path] --save_dir [save folder] --
+python segmentation.py --dataset dataset/Unlabelled --model [trained model path] --save_dir [save folder]
 ```
 
 ## Result Example
