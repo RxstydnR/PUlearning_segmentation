@@ -14,7 +14,7 @@ To get know about PU Learning, see **`pulearn.ipynb`** for a short PU Learning e
 
 - **`data.py`** has methods to prepare data for training.
 
-- **`model.py`** has some deep learning models.<ex>
+- **`model.py`** has some deep learning models.<br>
   ex) Resnet18, simple CNN, CNN refered to [1]
 
 
