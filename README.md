@@ -31,8 +31,15 @@ python segmentation.py --dataset dataset/Unlabelled --model [trained model path]
 
 ## Result Example
 
-Aurora Image [4].
-As a example, we segment the aurora images with the background as positive classand the aurora as negative class. Resnet18 is trained with nnPU methods and we segment the Unlabelled data. The dataset is from [4] and is in `dataset`.
+As a example, we segment the aurora images with the background as positive classand the aurora as negative class. Resnet18 is trained with nnPU methods and we segment the Unlabelled data. The dataset is from [4] and is in `dataset` folder as zip files.
+
+The results are figures below.
+
+<center><img src="Results/2.jpg"></center>
+<center><img src="Results/5.jpg"></center>
+<center><img src="Results/6.jpg"></center>
+<center><img src="Results/8.jpg"></center>
+<center><img src="Results/9.jpg"></center>
 
 
 
