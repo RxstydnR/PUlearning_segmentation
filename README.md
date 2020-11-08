@@ -1,10 +1,10 @@
 # Aurora Image Segmentation with PU Learning.
 
-<p align="center"><img src="Results/abs1.pdf" width=80%></p>
+<p align="center"><img src="Results/abs1.png" width=80%></p>
 
 <img src="Results/abs1.pdf">
 
-<p align="center"><img src="Results/abs2.pdf" width=80%></p>
+<p align="center"><img src="Results/abs2.png" width=80%></p>
 
 **This is for segmentation of Aurora images with a deep learning model trained by PU Learning.**
 
