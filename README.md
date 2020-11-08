@@ -1,5 +1,9 @@
 # Aurora Image Segmentation with PU Learning.
 
+<p align="center"><img src="Results/abs1.pdf" width=80%></p>
+
+<p align="center"><img src="Results/abs2.pdf" width=80%></p>
+
 **This is for segmentation of Aurora images with a deep learning model trained by PU Learning.**
 
 `PULoss.py` is also a reproducing code written in ***Keras*** for non-negative PU learning [1] and unbiased PU learning [2] in the paper "Positive-Unlabeled Learning with Non-Negative Risk Estimator". 
