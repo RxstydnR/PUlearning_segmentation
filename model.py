@@ -4,33 +4,33 @@ from tensorflow.keras.applications.densenet import DenseNet121
 from tensorflow.keras.layers import Activation, Dense, GlobalAveragePooling2D, Flatten, Conv2D, BatchNormalization, Input, Dropout, MaxPooling2D
 from tensorflow.keras.models import Model
 
-
-
 def build_model(model_name, input_shape):
-    """ Build model customized for PULearn.（モデルの作成）
+    """ Build model customized for PULearning.
     """
-
     if model_name=="ResNet18":
         model = ResNet18(input_shape=input_shape)
+
     elif model_name=="DenseNet121":
         model = DenseNet121(include_top=False, input_shape=input_shape, weights=None) # 「include_top=False」でモデルを読み込み、全結合層（Softmaxなど）を自作する。
         x = Activation('relu')(model.output)
-        x = GlobalAveragePooling2D()(x) # x = Flatten()(x)
+        x = GlobalAveragePooling2D()(x) # GAP can be used instead of Flatten()(x)
         x = Dense(256, activation="relu")(x) 
         x = Dense(256, activation="relu")(x) 
-        x = Dense(1)(x) # activation="tanh"
+        x = Dense(1)(x) 
         model = Model(model.inputs, x)
+
     elif model_name=="CNN_paper":
         model = CNN_paper(input_shape=input_shape)
+
     else: 
         model = CNN(input_shape=input_shape)
 
     return model
 
 
-
 def ResNet18(input_shape):
-    
+    """ Resnet18 model 
+    """
     num_filters = 64
     num_blocks = 4
     num_sub_blocks = 2
@@ -67,8 +67,9 @@ def ResNet18(input_shape):
         num_filters *= 2
 
     x = GlobalAveragePooling2D()(x)
+    x = Dense(256, activation="tanh")(x) # It seems that "tanh" is better than relu.
     x = Dense(256, activation="tanh")(x)
-    outputs = Dense(1)(x) # outputs = Dense(2, activation='softmax')(x)"sigmoid"
+    outputs = Dense(1)(x) 
     model = Model(inputs=inputs, outputs=outputs)
 
     return model
@@ -76,7 +77,8 @@ def ResNet18(input_shape):
 
 
 def CNN_paper(input_shape):
-    """ build CNN model based on the paper. [Positive-Unlabeled Learning with Non-Negative Risk Estimator](https://arxiv.org/abs/1703.00593)
+    """ CNN model based on the paper. 
+        [Positive-Unlabeled Learning with Non-Negative Risk Estimator](https://arxiv.org/abs/1703.00593)
     """
 
     inputs = Input(shape=input_shape)
@@ -109,10 +111,10 @@ def CNN_paper(input_shape):
     x = BatchNormalization()(x)
     x = Activation('relu')(x)
 
-    # x = Flatten()(x)
+    x = Flatten()(x)
     x = Dense(1000, activation='relu')(x)
     x = Dense(1000, activation='relu')(x)
-    outputs = Dense(1, activation='relu')(x)
+    outputs = Dense(1)(x)
 
     return Model(inputs=inputs, outputs=outputs)
 
@@ -136,12 +138,31 @@ def CNN(input_shape):
     x = Activation('relu')(x)
     
     x = Flatten()(x)
-    
-    # x = Dense(256, activation="tanh")(x)
     x = Dense(256, activation="tanh")(x)
-
-    # outputs = Dense(1, activation="tanh")(x)
     outputs = Dense(1)(x)
 
+    return Model(inputs=inputs, outputs=outputs)
 
+
+def MLP(input_shape):
+    
+    inputs = Input(shape=input_shape)
+    x = Dense(300)(inputs)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
+    
+    x = Dense(300)(x)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
+    
+    x = Dense(300)(x)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
+    
+    x = Dense(300)(x)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
+    
+    outputs = Dense(1)(x)
+    
     return Model(inputs=inputs, outputs=outputs)
